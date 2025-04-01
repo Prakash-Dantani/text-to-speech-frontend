@@ -1,5 +1,3 @@
-import react from "react";
-
 interface BoldFontDivProps {
   children: React.ReactNode;
   className?: String;
@@ -8,7 +6,7 @@ interface BoldFontDivProps {
 const BoldFontDiv = ({ children, className = "" }: BoldFontDivProps) => {
   return (
     <>
-      <div className={`{className}`}>{children}</div>
+      <div className={`${className}`}>{children}</div>
     </>
   );
 };
