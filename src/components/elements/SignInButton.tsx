@@ -4,7 +4,7 @@ const SignInButton = () => {
     //   Sign In
     // </button>
 
-    <button className="btn btn-ghost bg-black text-white rounded-md mr-2 ml-2">
+    <button className="btn sm:btn-md btn-xs btn-ghost bg-black text-white rounded-md mr-2 ml-2">
       Sign In
     </button>
   );

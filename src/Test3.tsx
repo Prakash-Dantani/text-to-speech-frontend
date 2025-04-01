@@ -1,8 +1,6 @@
-import React from "react";
-
 const Test3 = () => {
   return (
-    <div>
+    <div className="p-inherit">
       <button className="btn btn-neutral">Neutral</button>
       <button className="btn btn-primary">Primary</button>
       <button className="btn btn-secondary">Secondary</button>

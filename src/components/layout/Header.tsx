@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Menu from "./Menu";
 import SignUpButton from "../elements/SignUpButton";
 import SignInButton from "../elements/SignInButton";
@@ -6,14 +5,14 @@ import ThemeToggler from "../elements/ThemeToggler";
 
 const Header = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 pl-2 pr-2 lg:pl-16 lg:pr-16">
       <Menu />
-      <div className="navbar-end lg:block">
+      <div className="navbar-end lg:flex lg:gap-1">
         <ThemeToggler />
         <SignInButton />
         <SignUpButton />
 
-        <div className="dropdown dropdown-end">
+        {/* <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
             role="button"
@@ -43,7 +42,7 @@ const Header = () => {
               <a>Logout</a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );

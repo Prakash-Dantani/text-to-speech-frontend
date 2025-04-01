@@ -3,9 +3,6 @@ import * as Icons from "react-icons/fa6"; // Import all Fa icons
 
 import BoldFontDiv from "../elements/BoldFontDiv";
 import Logo from "./Logo";
-import SignInButton from "../elements/SignInButton";
-import SignUpButton from "../elements/SignUpButton";
-import ThemeToggler from "../elements/ThemeToggler";
 
 const Menu = () => {
   const menu_list = [
@@ -44,7 +41,7 @@ const Menu = () => {
     <>
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden sm:mr-10">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -89,13 +86,13 @@ const Menu = () => {
           </ul>
         </div>
         <Logo />
-        <div className="flex flex-row gap-1">
+        {/* <div className="flex flex-row gap-1">
           <div className="lg:hidden">
             <ThemeToggler />
             <SignInButton />
             <SignUpButton />
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="navbar-center hidden lg:flex">

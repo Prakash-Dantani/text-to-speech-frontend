@@ -12,7 +12,7 @@ const ThemeToggler = () => {
     <input
       type="checkbox"
       value="dark"
-      className="toggle theme-controller"
+      className="toggle sm:toggle-md toggle-xs theme-controller"
       checked={isdark}
       onChange={() => setIsdark(!isdark)}
     />
