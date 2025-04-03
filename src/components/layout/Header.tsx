@@ -5,7 +5,7 @@ import ThemeToggler from "../elements/ThemeToggler";
 
 const Header = () => {
   return (
-    <div className="navbar bg-base-100 pl-2 pr-2 lg:pl-16 lg:pr-16">
+    <div className="navbar bg-base-100 pl-2 pr-2 ">
       <Menu />
       <div className="navbar-end lg:flex lg:gap-1">
         <ThemeToggler />
