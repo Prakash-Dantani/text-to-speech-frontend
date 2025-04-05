@@ -15,11 +15,12 @@ const Slider = () => {
   ];
 
   return (
-    <div className="pt-20 md:pt-8 text-lg text-center font-bold">
-      <p>Trusted by the world’s most innovative teams</p>
-      <div className="justify-center w-full h-[20vh] pt-10" >
+    <div className="pt-[5vh] md:pt-[2vh] w-[100%] h-[35vh]">
+      
+      <p className="text-xl md:text-3xl text-center font-bold pt-[10vh]">Trusted by the world’s most innovative teams</p>
+      <div className="justify-center w-full pt-10 bg-cover" >
         <SimpleImageSlider
-          width={'80vw'}
+          width={'85vw'}
           height={'30vh'}
           images={images}
           showBullets={true}
