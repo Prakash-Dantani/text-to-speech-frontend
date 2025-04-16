@@ -16,12 +16,14 @@ const Slider = () => {
 
   return (
     <div className="pt-[5vh] md:pt-[2vh] w-[100%] h-[35vh]">
-      
-      <p className="text-xl md:text-3xl text-center font-bold pt-[10vh]">Trusted by the world’s most innovative teams</p>
-      <div className="justify-center w-full pt-10 bg-cover" >
+      <p className="text-xl md:text-3xl text-center font-bold pt-[10vh] capitalize">
+        Trusted By the world’s most{" "}
+        <span className="text-orange-500"> innovative teams </span>
+      </p>
+      <div className="justify-center w-full pt-10 bg-cover">
         <SimpleImageSlider
-          width={'85vw'}
-          height={'30vh'}
+          width={"85vw"}
+          height={"30vh"}
           images={images}
           showBullets={true}
           showNavs={true}
@@ -30,7 +32,6 @@ const Slider = () => {
           autoPlay={true}
           slideDuration={0.7}
           autoPlayDelay={2.5}
-          
         />
       </div>
     </div>
