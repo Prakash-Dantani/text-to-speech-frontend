@@ -11,11 +11,11 @@ const VideoPresentation = () => {
         Add your generated AI voices to your clips. Simply drag and drop your
         audio and video files to see your final project.
       </p>
-      <div className="justify-center w-full%] pt-10 bg-cover">
+      <div className="flex items-center justify-center w-full pt-10 bg-cover">
         <img
           src={howToAdd}
           alt="How to Add"
-          className="w-auto h-auto md:h-[40vh]"
+          className="w-[50%] h-auto md:h-[50vh]"
         />
       </div>
     </div>
