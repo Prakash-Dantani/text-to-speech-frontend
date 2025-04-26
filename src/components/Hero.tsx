@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HeroCharacter from "./HeroCharacter";
 
 const Hero = () => {
@@ -21,9 +22,12 @@ const Hero = () => {
           more. Choose from over 50 different voices and languages to find the
           perfect one for you.
         </p>
-        <button className="btn btn-md lg:btn-lg rounded-md bg-orange-500 hover:bg-orange-600 text-white">
-          Dashboard
-        </button>
+        <Link
+          to="/dashboard"
+          className="btn btn-md lg:btn-lg rounded-md bg-orange-500 hover:bg-orange-600 text-white"
+        >
+          Let's Start
+        </Link>
       </div>
       <HeroCharacter />
     </div>
