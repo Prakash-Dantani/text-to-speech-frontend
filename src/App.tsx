@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/dashboard";
-import Home from "./pages/home";
+import Dashboard from "./pages/Dashobard";
+import Home from "./pages/Home";
+import Voices from "./pages/Voices";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/voices" element={<Voices />} />
         </Routes>
       </Router>
     </div>
