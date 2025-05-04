@@ -13,18 +13,13 @@ const Voices = () => {
   const [totalPages, setTotalPages] = useState(1);
 
   const fetchVoices = async () => {
-    // alert("PRakash");
-    const voicesData = await ApiClient.get(`/voices?page=${page}&limit=1`).then(
+    const voicesData = await ApiClient.get(`/voices?page=${page}&limit=5`).then(
       (response) => response.data
     );
-    // setVoiceList(voicesData.voices);
-    setVoiceList((prevVoices) => [...prevVoices, ...voicesData.voices]); // append new
 
+    setVoiceList((prevVoices) => [...prevVoices, ...voicesData.voices]);
     setTotalPages(voicesData.totalPages);
-
     setLoading(false);
-    console.log("totalPages : " + totalPages);
-    console.log("voicesData.totalPages : " + voicesData.totalPages);
   };
 
   useEffect(() => {
@@ -34,21 +29,21 @@ const Voices = () => {
     <>
       <PageBody pageTitle="Voices">
         <InfiniteScroll
-          dataLength={5} //This is important field to render the next data
-          next={fetchVoices}
-          hasMore={true}
-          loader={<h4>Loading Data...</h4>}
+          dataLength={voiceList.length}
+          next={() => setPage((prevPage) => prevPage + 1)}
+          hasMore={page < totalPages}
+          loader={<h4>Loading...</h4>}
           endMessage={
             <p style={{ textAlign: "center" }}>
-              <b>Yay! You have seen it all</b>
+              <b>Yay! You have seen all voices.</b>
             </p>
           }
         >
           {loading && <p>Loading...</p>}
           <div className="grid grid-cols-3 gap-4">
             {voiceList.map((voice, index) => (
-              <LazyLoad>
-                <VoiceCard voice={voice} key={index} />
+              <LazyLoad key={index}>
+                <VoiceCard voice={voice} />
               </LazyLoad>
             ))}
           </div>
