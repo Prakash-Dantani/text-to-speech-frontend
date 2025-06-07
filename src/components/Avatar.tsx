@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-
-const Avatar = ({ gender }: { gender: string }) => {
+interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
+  gender: string;
+}
+const Avatar = ({ gender, className = "", ...rest }: AvatarProps) => {
   const [url, setUrl] = useState("");
 
   useEffect(() => {
@@ -10,7 +12,14 @@ const Avatar = ({ gender }: { gender: string }) => {
     );
   }, [gender]);
 
-  return url ? <img src={url} alt="Avatar" className="rounded-xl" /> : null;
+  return url ? (
+    <img
+      src={url}
+      alt="Avatar"
+      className={`rounded-2xl ${className}`}
+      {...rest}
+    />
+  ) : null;
 };
 
 export default Avatar;
