@@ -17,7 +17,7 @@ const Sidebar = () => {
     {
       icon: "FaVolumeHigh",
       title: "Saved Voices",
-      page: "/saved_voices",
+      page: "/saved-voices",
     },
     {
       icon: "FaGear",

@@ -5,6 +5,7 @@ import Avatar from "./Avatar";
 import CountryFlag from "./CountryFlag";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FaDownload } from "react-icons/fa6";
 
 const GenerateVoice = () => {
   // Check user had selected voice or not
@@ -29,10 +30,13 @@ const GenerateVoice = () => {
   const [data, setData] = useState(null); // State to store API data
   const [error, setError] = useState<string | null>(null); // State to handle errors
   const [loading, setLoading] = useState(true); // State to manage loading
+  const [isVisible, setisVisible] = useState(false); // State to manage loading
 
   // Fetch data using useEffect
   const getVoice = async () => {
     try {
+      setisVisible(true);
+
       const response = await axios.post(
         "http://localhost:3000/api/text-to-speech",
         {
@@ -42,6 +46,7 @@ const GenerateVoice = () => {
         }
       );
       setData(response.data?.data);
+      setisVisible(false);
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message); // Access the error message safely
@@ -50,6 +55,38 @@ const GenerateVoice = () => {
       }
     } finally {
       setLoading(false);
+    }
+  };
+
+  const saveVoice = async () => {
+    try {
+      // console.log(data);
+
+      const isSaved = await axios.post(
+        "http://localhost:3000/api/text-to-speech/save-voice",
+        {
+          language_code: voice.language_code,
+          voice_name: voice.voice_name,
+          text_to_convert: userText,
+          voice: data,
+        }
+      );
+      console.log(isSaved);
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        console.error("Axios error response:", err.response?.data?.message);
+
+        const serverMessage =
+          err.response?.data?.message || "Server error occurred.";
+        // setError(serverMessage);
+        setError(
+          "Your voice is not saved. Something wrong with your input, please try again."
+        );
+      } else if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred.");
+      }
     }
   };
 
@@ -97,14 +134,26 @@ const GenerateVoice = () => {
           </div>
 
           <div className="card pt-5">
-            {loading && <p>Loading...</p>}
+            {loading && <p className={isVisible ? "" : "hide"}>Loading...</p>}
             {error && <p>Error: {error}</p>}
             {data && (
-              <div>
-                <audio controls>
-                  <source src={data} type="audio/mpeg" />
-                  Your browser does not support the audio element.
-                </audio>
+              <div className="grid grid-cols-2">
+                <>
+                  <audio controls>
+                    <source src={data} type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </>
+                <>
+                  <button
+                    type="button"
+                    className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-2 rounded border border-green-900 w-[50%] h-10 pl-5 flex items-center gap-2"
+                    onClick={saveVoice}
+                  >
+                    <FaDownload />
+                    <span>Save Voice</span>
+                  </button>
+                </>
               </div>
             )}
 
