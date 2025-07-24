@@ -18,12 +18,21 @@ const PageBody = ({ pageTitle, children }: PageBodyProps) => {
           <label htmlFor="my-drawer" className="btn btn-ghost drawer-button">
             <FaBars />
           </label>
-          <h1 className="ml-4 text-xl font-bold">{pageTitle}</h1>{" "}
           {/* DYNAMIC title */}
+          <h1 className="ml-4 text-xl font-bold">{pageTitle}</h1>
         </div>
 
         {/* Page content */}
-        <main className="p-4">{children}</main>
+        <main className="p-2">
+          <div className="card border-2 bg-base-100 w-auto">
+            <div className="card-body">
+              <h2 className="card-title">
+                {/* <h1 className="ml-6 text-xl font-bold">{pageTitle}</h1> */}
+              </h2>
+              <div className="card-body">{children}</div>
+            </div>
+          </div>
+        </main>
       </div>
 
       {/* Sidebar */}

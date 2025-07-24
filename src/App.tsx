@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashobard";
 import Home from "./pages/Home";
 import Voices from "./pages/Voices";
 import GenerateVoice from "./components/GenerateVoice";
+import SavedVoices from "./pages/SavedVoices";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/voices" element={<Voices />} />
           <Route path="/generate-voice" element={<GenerateVoice />} />
+          <Route path="/saved-voices" element={<SavedVoices />} />
         </Routes>
       </Router>
     </div>
