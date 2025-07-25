@@ -70,7 +70,7 @@ const SavedVoices = () => {
       <PageBody pageTitle="Saved Voice">
         {loading && <p>Loading...</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
-
+        {isVisible}
         {data.length === 0 && <p>No voice stored.</p>}
 
         <DataTable columns={columns} data={data} />
