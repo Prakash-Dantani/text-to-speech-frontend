@@ -3,7 +3,7 @@ import PageBody from "./layout/PageBody";
 import { RootState } from "../app/store";
 import Avatar from "./Avatar";
 import CountryFlag from "./CountryFlag";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { FaDownload } from "react-icons/fa6";
 
@@ -78,7 +78,7 @@ const GenerateVoice = () => {
 
         const serverMessage =
           err.response?.data?.message || "Server error occurred.";
-        // setError(serverMessage);
+        setError(serverMessage);
         setError(
           "Your voice is not saved. Something wrong with your input, please try again."
         );
