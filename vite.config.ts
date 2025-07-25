@@ -8,6 +8,6 @@ export default defineConfig({
 
   server: {
     host: '0.0.0.0',
-    port: parseInt(process.env.PORT) || 5173, // use Render's PORT if available
+    port: 5173, // use Render's PORT if available
   },
 });
