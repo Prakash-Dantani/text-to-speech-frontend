@@ -20,9 +20,13 @@ const Header = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3000/api/me", {
-          withCredentials: true,
-        });
+        // const { data } = await axios.get("http://localhost:3000/api/me", {
+        const { data } = await axios.get(
+          "https://tts-backend-ql5t.onrender.com/api/me",
+          {
+            withCredentials: true,
+          }
+        );
         setUser(data.user);
         navigate("/dashboard");
       } catch (error: any) {
@@ -80,7 +84,10 @@ const Header = () => {
                 <a>Settings</a>
               </li>
               <li>
-                <a href="http://localhost:3000/logout">Logout</a>
+                {/* <a href="http://localhost:3000/logout">Logout</a> */}
+                <a href="https://tts-backend-ql5t.onrender.com/logout">
+                  Logout
+                </a>
               </li>
             </ul>
           </div>

@@ -11,7 +11,9 @@ const SignInButton = () => {
       <button
         className="btn sm:btn-md btn-xs btn-ghost border-black bg-white text-black rounded-md"
         onClick={() =>
-          (window.location.href = "http://localhost:3000/auth/google")
+          // (window.location.href = "http://localhost:3000/auth/google")
+          (window.location.href =
+            "https://tts-backend-ql5t.onrender.com/auth/google")
         }
       >
         Login

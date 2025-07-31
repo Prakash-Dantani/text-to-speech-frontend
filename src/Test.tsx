@@ -32,7 +32,7 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:3000/api/text-to-speech",
+          "https://tts-backend-ql5t.onrender.com/api/text-to-speech",
           {
             language_code: "en-in",
             voice_name: "Jai",

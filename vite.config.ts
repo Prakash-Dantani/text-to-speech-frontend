@@ -7,8 +7,12 @@ export default defineConfig({
   plugins: [tailwindcss(), react()],
 
   server: {
-    host: '0.0.0.0',
+    host: "0.0.0.0",
     port: 5173, // use Render's PORT if available
-    allowedHosts: ['text-to-speech-frontend-lywk.onrender.com']
+    allowedHosts: [
+      "text-to-speech-frontend-lywk.onrender.com",
+      "127.0.0.1",
+      "localhost",
+    ],
   },
 });

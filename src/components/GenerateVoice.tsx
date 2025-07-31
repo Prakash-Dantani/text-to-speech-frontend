@@ -38,7 +38,8 @@ const GenerateVoice = () => {
       setisVisible(true);
 
       const response = await axios.post(
-        "http://localhost:3000/api/text-to-speech",
+        // "http://localhost:3000/api/text-to-speech",
+        "https://tts-backend-ql5t.onrender.com/api/text-to-speech",
         {
           language_code: voice.language_code,
           voice_name: voice.voice_name,
@@ -63,7 +64,8 @@ const GenerateVoice = () => {
       // console.log(data);
 
       const isSaved = await axios.post(
-        "http://localhost:3000/api/text-to-speech/save-voice",
+        // "http://localhost:3000/api/text-to-speech/save-voice",
+        "https://tts-backend-ql5t.onrender.com/api/text-to-speech/save-voice",
         {
           language_code: voice.language_code,
           voice_name: voice.voice_name,

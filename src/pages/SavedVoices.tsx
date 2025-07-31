@@ -19,7 +19,8 @@ const SavedVoices = () => {
       setisVisible(true);
 
       const response = await axios.get(
-        "http://localhost:3000/api/text-to-speech/saved-voices"
+        // "http://localhost:3000/api/text-to-speech/saved-voices"
+        "https://tts-backend-ql5t.onrender.com/api/text-to-speech/saved-voices"
       );
       setData(response.data?.voices);
       console.log(data);
