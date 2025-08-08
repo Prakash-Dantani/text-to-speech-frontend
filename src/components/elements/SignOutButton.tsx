@@ -1,4 +1,4 @@
-const SignInButton = () => {
+const SignOutButton = () => {
   return (
     // <button className="btn btn-ghost lg:hidden bg-black text-white rounded-md">
     //   Sign In
@@ -11,9 +11,9 @@ const SignInButton = () => {
       <button
         className="btn sm:btn-md btn-xs btn-ghost border-black bg-white text-black rounded-md"
         onClick={
-          () => (window.location.href = "http://localhost:3000/auth/google")
+          () => (window.location.href = "http://localhost:3000/logout")
           // (window.location.href =
-          //   "https://tts-backend-ql5t.onrender.com/auth/google")
+          //   "https://tts-backend-ql5t.onrender.com/logout")
         }
       >
         Login
@@ -22,4 +22,4 @@ const SignInButton = () => {
   );
 };
 
-export default SignInButton;
+export default SignOutButton;

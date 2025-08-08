@@ -1,5 +1,5 @@
 import Menu from "./Menu";
-// const apiUrl = import.meta.env.VITE_API_URL; // ✅ Vite
+const apiUrl = import.meta.env.VITE_API_URL; // ✅ Vite
 
 // import SignUpButton from "../elements/SignUpButton";
 import SignInButton from "../elements/SignInButton";
@@ -20,13 +20,12 @@ const Header = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        // const { data } = await axios.get("http://localhost:3000/api/me", {
-        const { data } = await axios.get(
-          "https://tts-backend-ql5t.onrender.com/api/me",
-          {
-            withCredentials: true,
-          }
-        );
+        const { data } = await axios.get(`${apiUrl}/api/me`, {
+          // const { data } = await axios.get(
+          //   "https://tts-backend-ql5t.onrender.com/api/me",
+          //   {
+          withCredentials: true,
+        });
         setUser(data.user);
         navigate("/dashboard");
       } catch (error: any) {
@@ -52,12 +51,11 @@ const Header = () => {
             {/* <SignUpButton /> */}
           </>
         ) : (
-          // <div>
-          //   <h2>Welcome, {user.name}</h2>
-          //   <p>Email: {user.email}</p>
-          // </div>
-
           <div className="dropdown dropdown-end">
+            <div>
+              <h2>Welcome, {user.name}</h2>
+              <p>Email: {user.email}</p>
+            </div>
             <div
               tabIndex={0}
               role="button"

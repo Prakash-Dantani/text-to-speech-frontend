@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Voices from "./pages/Voices";
 import GenerateVoice from "./components/GenerateVoice";
 import SavedVoices from "./pages/SavedVoices";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
   return (
@@ -11,10 +12,38 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/voices" element={<Voices />} />
-          <Route path="/generate-voice" element={<GenerateVoice />} />
-          <Route path="/saved-voices" element={<SavedVoices />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/voices"
+            element={
+              <ProtectedRoute>
+                <Voices />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/generate-voice"
+            element={
+              <ProtectedRoute>
+                <GenerateVoice />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/saved-voices"
+            element={
+              <ProtectedRoute>
+                <SavedVoices />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </Router>
     </div>
